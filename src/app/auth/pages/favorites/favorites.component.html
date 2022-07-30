@@ -1,0 +1,9 @@
+<h2>Mis Favoritos</h2>
+<hr />
+<ul class="favoritos-layout">
+    <li *ngFor="let anime of animes">
+        <app-card [anime]="anime"></app-card>
+    </li>
+</ul>
+
+<app-pagination></app-pagination>

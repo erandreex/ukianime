@@ -1,0 +1,10 @@
+<section class="nosotros">
+    <h1>Herramientas</h1>
+    <hr />
+
+    <ul class="owners-layout">
+        <li *ngFor="let tool of tools" class="o-card">
+            <app-tools-card [tool]="tool"></app-tools-card>
+        </li>
+    </ul>
+</section>

@@ -1,0 +1,14 @@
+<div [class]="background">
+    <app-header [auth]="auth"></app-header>
+    <app-modal-customizes></app-modal-customizes>
+
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+
+    <app-footer [auth]="auth"></app-footer>
+
+    <app-bottom-nav [auth]="auth"></app-bottom-nav>
+
+    <app-sidenav></app-sidenav>
+</div>

@@ -1,0 +1,23 @@
+<form class="form-layout" autocomplete="off" [formGroup]="passwordForm" (ngSubmit)="changePass()">
+    <section class="imputs-layout">
+        <div class="group">
+            <input type="password" formControlName="oldPassword" class="input" required="" />
+            <span class="bar"></span>
+            <label>Contraseña actual</label>
+        </div>
+
+        <div class="group">
+            <input type="password" formControlName="newPassword1" class="input" required="" />
+            <span class="bar"></span>
+            <label>Nueva contraseña</label>
+        </div>
+
+        <div class="group">
+            <input type="password" formControlName="newPassword2" class="input" required="" />
+            <span class="bar"></span>
+            <label>Repita la contraseña</label>
+        </div>
+    </section>
+
+    <button type="submit">Actualizar</button>
+</form>

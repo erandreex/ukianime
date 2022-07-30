@@ -1,0 +1,182 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    padding: 10px 0px;
+    margin: 0 auto;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+.titulo-categoria {
+    margin-left: 0;
+}
+
+.carousel-layout  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Botones */
+
+.slideBtn {
+    display: none;
+    border: none;
+    background-color: transparent;
+}
+
+.slideBtn:active,
+.slideBtn:focus
+    {
+    outline: none;
+}
+
+.svgd {
+    width: 25px;
+}
+
+
+/* Slider */
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+}
+
+.slider-inner {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    height: 100%;
+    width:  max-content;
+    overflow-x: auto;
+    left: 0.1px;
+    transition: all 0.5s ease;
+}
+
+.slider::-webkit-scrollbar{
+    display: none;
+}
+
+/* Card - Slider */
+
+.slide-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border-radius: var(--border-radius);
+    height: 100%;
+    width: 200px;
+    transition: 250ms ease-out;
+    opacity: 0.9;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    width: 100%;
+}
+
+.ruta{
+    flex-grow: 1;
+    width: 100%;
+}
+
+.rating {
+    line-height: 0.6;
+}
+
+.rating .fa.fa-star {
+    font-size: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.slide-card span {
+    line-height: 1;
+    font-size: 16px;
+}
+
+.slide-card > * {
+    width: 100%;
+}
+
+.favorite button {
+    border-radius: 50%;
+    height: 30px;
+    width: 31px;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+
+
+
+.slide-card:hover {
+    margin: 0 20px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.slide-card:last-child:hover {
+    margin: 0%;
+}
+
+/* Xtras */
+
+
+.slider.small {
+    height: 150px;
+}
+
+
+.slider.small .slide-card img {
+    object-fit: cover;
+    object-position: 1px 1px;
+}
+
+.slider.small .slide-card span {
+    padding: 5px;
+    padding-top: 2px;
+}
+
+
+@media screen and (min-width: 650px) {
+
+    .titulo-categoria {
+        margin-left: calc(25px + 6px + 6px);
+    }
+
+    .carousel {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .slideBtn{
+        display: block;
+    }
+}

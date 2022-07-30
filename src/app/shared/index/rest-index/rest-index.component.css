@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.auth {
+    background-color: #282828;
+    min-height: 100vh;
+    padding-top: 13vh;
+}
+
+.login-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: auto;
+    width: min(100%, var(--tamano-maximo));
+    padding: 20px;
+}
+
+.popular {
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.titulo {
+    font-family: 'Shojumaru', cursive;
+    text-shadow: 4px 4px #222020;
+    font-size: 2rem;
+    letter-spacing: 0.01em;
+    color: var(--first-color);
+}
+
+.logo-img {
+  height: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+
+@media screen and (min-width: 500px) {
+
+    .popular  {
+        width: min(400px, var(--tamano-maximo));
+    }
+
+    .titulo {
+
+        font-size: 3rem;
+    }
+
+    .logo-img {
+      height: 2.5rem;
+    }
+}
+

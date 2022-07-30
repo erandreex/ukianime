@@ -1,0 +1,56 @@
+<div class="espacio"></div>
+<section class="header">
+    <ul id="mobileHeader" class="header-layout">
+        <li id="back" (click)="back()">
+            <i class="fa-solid fa-angle-left fa-lg"></i>
+        </li>
+
+        <li id="logoMobile" routerLink="/" class="logo">
+            <img src="https://i.imgur.com/bYacHHK.png" class="logo-img" />
+            <span class="titulo">Ukianime</span>
+        </li>
+
+        <li id="menu_burger" (click)="sidenav('abrir')">
+            <i class="fa-solid fa-bars fa-lg"></i>
+        </li>
+    </ul>
+
+    <ul id="noMobileHeader" class="header-layout">
+        <li class="izquierda">
+            <div class="logo">
+                <img src="https://i.imgur.com/bYacHHK.png" class="logo-img" />
+                <span class="titulo">Ukianime</span>
+            </div>
+
+            <ul *ngFor="let ruta of rutas" class="paginas-lista">
+                <li>
+                    <a routerLink="/{{ ruta.path }}">{{ ruta.name }}</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="derecha">
+            <ul *ngIf="auth && rutasAuth.length > 0" id="iconos-auth">
+                <li *ngFor="let ruta of rutasAuth">
+                    <a routerLink="/{{ ruta.path }}">
+                        <i class="{{ ruta.icon }}"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <div *ngIf="!auth" id="loginActions">
+                <button>Registro</button>
+                <button>Login</button>
+            </div>
+
+            <div *ngIf="auth" class="user">
+                <i class="fa-solid fa-circle-user fa-lg"></i>
+                <span id="username">Ernesto</span>
+            </div>
+
+            <ul class="iconos">
+                <li><i (click)="modal('abrir')" class="fa-solid fa-gear fa-lg"></i></li>
+            </ul>
+        </li>
+    </ul>
+</section>

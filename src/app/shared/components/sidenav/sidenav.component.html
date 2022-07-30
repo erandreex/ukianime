@@ -1,0 +1,10 @@
+<div id="mySidenav" class="sidenav" [style.width]="sizeOpen">
+    <ul>
+        <li class="closebtn" (click)="action('cerrar')">&times;</li>
+        <li *ngFor="let ruta of rutas">
+            <a routerLink="/{{ ruta.path }}">{{ ruta.name }}</a>
+        </li>
+    </ul>
+</div>
+
+<div class="todooscuro" [class.mostrarBG]="backgroundO" (click)="action('cerrar')"></div>

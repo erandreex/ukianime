@@ -1,0 +1,7 @@
+<form class="form-layout" autocomplete="off" [formGroup]="rest1Form" (ngSubmit)="algo()">
+    <input type="text" formControlName="username" placeholder="Username" />
+
+    <button type="submit" [disabled]="rest1Form.invalid">Verificar</button>
+
+    <a class="registrarse" routerLink="../login">Salir</a>
+</form>

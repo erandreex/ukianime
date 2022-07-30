@@ -1,0 +1,10 @@
+<form class="form-layout" autocomplete="off" [formGroup]="registroForm" (ngSubmit)="registro()">
+    <input type="text" formControlName="firstname" placeholder="Nombre" />
+    <input type="text" formControlName="username" placeholder="Usuario" />
+    <input type="password" formControlName="password" placeholder="Contraseña" />
+    <input type="password" formControlName="password2" placeholder="Repita contraseña" />
+
+    <button type="submit" [disabled]="registroForm.invalid">Registrarse</button>
+
+    <span>¿Ya tienes una cuenta? <a class="registrarse" routerLink="../login">Ingresar</a></span>
+</form>

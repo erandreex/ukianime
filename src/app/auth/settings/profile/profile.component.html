@@ -1,0 +1,17 @@
+<form class="form-layout" autocomplete="off" [formGroup]="profileForm" (ngSubmit)="update()">
+    <section class="imputs-layout">
+        <div class="group">
+            <input type="text" formControlName="firstname" class="input" required="" />
+            <span class="bar"></span>
+            <label>Nombre</label>
+        </div>
+
+        <div class="group">
+            <input type="text" formControlName="lastname" class="input" required="" />
+            <span class="bar"></span>
+            <label>Apellido</label>
+        </div>
+    </section>
+
+    <button type="submit">Actualizar</button>
+</form>

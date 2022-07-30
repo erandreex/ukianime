@@ -1,0 +1,163 @@
+/* Fuentes */
+
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+
+/* Reser */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navegador principal */
+
+.espacio {
+    height: 70px;
+}
+
+section {
+    height: 60px;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+}
+
+.header {
+    background-color: #343131;
+    color: #b4b4ba;
+
+    width: 100%;
+}
+
+.header-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+  width: 95%;
+  max-width: var(--tamano-maximo);
+  position: relative;
+}
+
+
+/* izquierda */
+
+.izquierda {
+    display: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.logo-img {
+  height: 25px;
+}
+
+.titulo {
+  font-family: 'Shojumaru', cursive;
+  text-shadow: 2px 2px #222020;
+  font-size: 25px;
+  letter-spacing: 0.01em;
+  color: rgb(241, 97, 44);
+}
+
+.paginas-lista {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+/* Derecha */
+
+
+.derecha {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.derecha > * {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.iconos {
+    gap: 10px;
+}
+
+.user{
+    gap: 5px;
+}
+
+#noMobileHeader {
+    display: none;
+}
+
+#username {
+    display: none;
+}
+
+#iconos-auth {
+    display: none;
+}
+
+#loginActions {
+    display: none;
+}
+
+@media screen and (min-width: 650px) {
+
+    #mobileHeader {
+        display: none;
+    }
+
+    #noMobileHeader {
+        display: flex;
+    }
+
+    #iconos-auth {
+        display: contents;
+    }
+
+    #loginActions {
+        display: block;
+    }
+
+    #logoMobile {
+        display: none;
+    }
+
+    #menu_burger {
+        display: none;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
+
+    .izquierda {
+        display: flex;
+    }
+
+    #username {
+        display: block;
+    }
+
+}

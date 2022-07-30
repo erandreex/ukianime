@@ -1,0 +1,10 @@
+<form class="form-layout" autocomplete="off" [formGroup]="loginForm" (ngSubmit)="login()">
+    <input type="text" formControlName="username" placeholder="Usuario" />
+    <input type="password" formControlName="password" placeholder="Contraseña" />
+
+    <a class="forgotpass" routerLink="../restablecer">¿Olvidaste la contraseña?</a>
+
+    <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+
+    <span>¿Aún no tienes cuenta? <a class="registrarse" routerLink="../registro">Registrate</a></span>
+</form>

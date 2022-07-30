@@ -1,0 +1,28 @@
+<div
+    class="card"
+    [style.background-image]="'url(' + anime?.attributes?.posterImage?.medium + ')'"
+    [style.height]="height"
+    [style.width]="width"
+>
+    <a class="ruta" routerLink="/anime/{{ anime?.id }}"></a>
+
+    <div class="card-footer">
+        <div class="footer-info">
+            <span class="info-title">{{ anime?.attributes?.canonicalTitle }}</span>
+
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+
+        <div *ngIf="auth" class="footer-favorite">
+            <button (click)="aqui('s')">
+                <i class="fa-solid fa-star"></i>
+            </button>
+        </div>
+    </div>
+</div>

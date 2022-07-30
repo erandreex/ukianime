@@ -1,0 +1,10 @@
+main {
+    width: 98%;
+    margin: 0px auto;
+    max-width: var(--tamano-maximo);
+    min-height: 90vh;
+}
+
+.fondo-solid {
+    background-color: #262424;
+}

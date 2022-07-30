@@ -1,0 +1,31 @@
+@import url("../../../../assets/css/formularios.css");
+
+
+.forgotpass {
+    margin-top: 10px;
+}
+
+.registrarse {
+    font-weight: 700;
+}
+
+button{
+    margin-top: 10px;
+    background: var(--first-color);
+    height: 3rem;
+    width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+    .login-layout {
+        width: min(500px, var(--tamano-maximo));
+    }
+    .titulo {
+
+        font-size: 3rem;
+    }
+    .logo-img {
+      height: 2.5rem;
+    }
+}
+

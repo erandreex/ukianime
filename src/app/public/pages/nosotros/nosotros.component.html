@@ -1,0 +1,10 @@
+<section class="nosotros">
+    <h1>Nosotros</h1>
+    <hr />
+
+    <ul class="owners-layout">
+        <li *ngFor="let owner of owners" class="o-card">
+            <app-profile-card [owner]="owner"></app-profile-card>
+        </li>
+    </ul>
+</section>

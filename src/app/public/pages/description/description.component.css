@@ -1,0 +1,171 @@
+.desc-layout {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* background-color: black; */
+    border-radius: var(--border-radius);
+    padding: 10px;
+    /* background-color: rgba(0, 0, 0, 0.53); */
+    backdrop-filter: blur(35px);
+}
+
+.portada-imagen {
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--border-radius);
+}
+
+
+.main-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 20px 10px 0px 10px;
+}
+
+.info-left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.info-title{
+    line-height: 1;
+    font-size: 24px;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    align-items: baseline;
+    gap: 10px;
+    line-height: 0.6;
+}
+
+.rating .fa.fa-star {
+    font-size: 16px;
+}
+
+
+.info-right button {
+    border-radius: 50%;
+    height: 45px;
+    width: 46px;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.claroo {
+    padding: 10px;
+}
+
+.slide-data {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 100%;
+    height: 40px;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+}
+
+.slide-data::-webkit-scrollbar{
+    display: none;
+}
+
+.list-tag {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    width: max-content;
+    overflow-x: auto;
+    left: 0.1px;
+    transition: all 0.5s ease;
+    margin: 0;
+    height: 100%;
+    align-items: center;
+}
+
+.genero-list >  * {
+    background-color: aqua;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 18px;
+    height: 100%;
+}
+
+
+.generos-list >  * {
+    background-color: aqua;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 18px;
+}
+
+.generos-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+    margin: 0;
+    display: none;
+}
+
+.meta-info {
+    padding: 10px;
+    margin: 0;
+}
+
+.generos-list > * {
+    background-color: aqua;
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 18px;
+}
+
+p {
+    padding: 10px;
+}
+
+
+@media screen and (min-width: 850px) {
+
+    .portada-imagen {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .desc-layout {
+        align-items: flex-start;
+        flex-direction: row;
+    }
+
+    .parteA {
+        width: 30%;
+    }
+
+    .parteB {
+        width: 70%;
+    }
+
+    .claroo {
+        display: none;
+    }
+
+    .generos-list {
+        display: flex;
+    }
+}

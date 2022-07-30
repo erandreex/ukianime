@@ -1,0 +1,53 @@
+ul {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+section {
+    background-color: rgb(38, 38, 38);
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+}
+
+  /* Style the links inside the navigation bar */
+  .navbar li {
+    color: #f2f2f2;
+    font-size: 17px;
+    padding: 12px 15px;
+  }
+
+
+  /* Change the color of links on hover */
+  .navbar li:hover,
+  .navbar li:active,
+  .navbar li:focus  {
+    background-color: transparent;
+    color: gainsboro;
+  }
+
+  /* Add a color to the active/current link */
+  .navbar li a.active i {
+    color: #f1612c;
+  }
+
+
+  @media screen and (min-width: 650px) {
+
+    #bottomNav {
+        display: none;
+    }
+
+}

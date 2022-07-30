@@ -1,0 +1,23 @@
+<form class="form-layout" autocomplete="off" [formGroup]="questionSecurityForm" (ngSubmit)="update()">
+    <section class="imputs-layout">
+        <div class="group">
+            <input type="text" formControlName="answer1" class="input" required="" />
+            <span class="bar"></span>
+            <label>Comida favorita</label>
+        </div>
+
+        <div class="group">
+            <input type="text" formControlName="answer2" class="input" required="" />
+            <span class="bar"></span>
+            <label>Videojuego favorito</label>
+        </div>
+
+        <div class="group">
+            <input type="text" formControlName="answer3" class="input" required="" />
+            <span class="bar"></span>
+            <label>Equipo favorito</label>
+        </div>
+    </section>
+
+    <button type="submit">Actualizar</button>
+</form>

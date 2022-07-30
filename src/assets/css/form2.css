@@ -1,0 +1,90 @@
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.imputs-layout {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 275px;
+}
+
+.group {
+    position: relative;
+    flex-grow: 1;
+   }
+
+   .input {
+    padding: 10px 10px 10px 5px;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+    color: aqua;
+    width: 100%;
+   }
+
+   .input:focus {
+    outline: none;
+   }
+
+
+
+   label {
+    color: #999;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+   }
+
+   .input:focus ~ label,
+   .input:valid ~ label {
+    top: -10px;
+    font-size: 14px;
+    color: var(--first-color);
+   }
+
+   .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+
+   }
+
+   .bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: var(--first-color);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+   }
+
+   .bar:before {
+    left: 50%;
+   }
+
+   .bar:after {
+    right: 50%;
+   }
+
+   .input:focus ~ .bar:before, .input:focus ~ .bar:after {
+    width: 50%;
+   }
+
+
+
+   button {
+    width: 200px;
+   }
