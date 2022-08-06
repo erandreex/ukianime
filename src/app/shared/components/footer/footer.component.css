@@ -1,49 +1,51 @@
-/* Reset */
-
-a {
-    color: #b4b4ba;
-    text-decoration: none;
+.espacio {
+    height: 55px;
 }
 
+p {
+    font-size: var(--text-size);
+}
 
+h3 {
+    font-size: var(--category-size);
+}
 
-.espacio {
-    height: 66px;
+a {
+    font-size: var(--name-size);
 }
 
 /* ----- Footer ----- */
 
-
 .contenido_del_footer{
-  background-color:#343131;
-  color: #b4b4ba;
-  padding: 20px;
-
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color:var(--third-background);
+    color: var(--text-color);
 }
 
 .layout-footer{
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 5%;
-  width: 80%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1%;
+  width: 100%;
   max-width: var(--tamano-maximo);
   margin: auto;
+
+  flex-wrap: nowrap;
+  gap: 5%;
 }
 
 .p1-description{
     text-align: justify;
-    width: calc(90%/3);
+
 }
 
 .p2-paginas{
     display: flex;
     flex-direction: column;
-    width: calc(90%/3);
 }
 
 .lista-paginas {
@@ -57,52 +59,58 @@ a {
 }
 
 .p3-creadores{
-    width: calc(90%/3);
     text-align:justify;
     white-space: nowrap;
 }
 
-.barra {
+/* Second Footer */
 
-    background-color: #1d1b1b;
+.barra {
+    background-color: var(--four-background);
+
 }
 
 .contenidoBarra {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-around;
-
-    margin: 0 auto;
-
+    align-items: center;
+    text-align: center;
+    margin: auto;
     width: 100%;
     max-width: var(--tamano-maximo);
 }
 
+.contenidoBarra > * {
+    width: 100%;
+}
 
-@media screen and (max-width: 650px) {
+
+@media screen and (min-width: 550px) {
+
     .layout-footer{
-        flex-wrap: wrap;
-        gap: 1%;
-        width: 95%;
-        margin: auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 5%;
+        width: 80%;
+      }
+    .layout-footer > *{
+        width: calc(90%/3);
     }
 
-    .layout-footer > *{
-        width: 100%;
-      }
-
-
-      .contenidoBarra {
-        flex-wrap: wrap;
-        align-items: center;
-        text-align: center;
-        margin: 0 auto;
-        width: 95%;
+    .barra {
+        padding: 15px;
     }
 
     .contenidoBarra > * {
-        width: 100%;
+        flex-wrap: wrap;
+        width: 50%;
+    }
+
+    .espacio {
+        height: 0px;
+        display: none;
     }
 
 }

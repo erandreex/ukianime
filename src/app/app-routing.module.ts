@@ -8,9 +8,10 @@ import { SigninComponent } from './auth/components/signin/signin.component';
 import { ValidarTokenGuard } from './auth/guards/validar-token.guard';
 import { AuthIndexComponent } from './shared/index/auth-index/auth-index.component';
 import { Rest1Component } from './auth/components/restablecer/rest1/rest1.component';
-import { RestIndexComponent } from './shared/index/rest-index/rest-index.component';
 import { Rest2Component } from './auth/components/restablecer/rest2/rest2.component';
 import { Rest3Component } from './auth/components/restablecer/rest3/rest3.component';
+import { RestUsernameGuard } from './auth/guards/rest-username.guard';
+import { RestAnswerGuard } from './auth/guards/rest-answer.guard';
 
 const routes: Routes = [
     {
@@ -30,15 +31,11 @@ const routes: Routes = [
                 path: 'registro',
                 component: SigninComponent,
             },
-            {
-                path: 'restablecer',
-                component: Rest1Component,
-            },
         ],
     },
     {
         path: 'restablecer',
-        component: RestIndexComponent,
+        component: AuthIndexComponent,
         children: [
             {
                 path: '',
@@ -47,10 +44,14 @@ const routes: Routes = [
             {
                 path: ':username',
                 component: Rest2Component,
+                canLoad: [RestUsernameGuard],
+                canActivate: [RestUsernameGuard],
             },
             {
-                path: ':username/:codepass',
+                path: ':username/pass',
                 component: Rest3Component,
+                canLoad: [RestAnswerGuard],
+                canActivate: [RestAnswerGuard],
             },
         ],
     },

@@ -1,0 +1,33 @@
+<figure class="card" [style.height]="height" [style.width]="width">
+    <img
+        #lImage
+        [src]="anime?.attributes?.posterImage?.medium"
+        [alt]="anime?.attributes?.canonicalTitle"
+        onerror="this.src='../../../../assets/imagen-no-disponible.jpg'"
+        routerLink="/anime/{{ anime?.id }}"
+        [hidden]="!viewImage"
+        (load)="load()"
+    />
+
+    <div class="loader" alt="prueba" [hidden]="viewImage"></div>
+
+    <figcaption class="aquiesasi">
+        <div class="footer-info" routerLink="/anime/{{ anime?.id }}">
+            <h3>{{ anime?.attributes?.canonicalTitle }}</h3>
+
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+
+        <div class="footer-favorite">
+            <button (click)="addRemoveFavorite(anime!.id)">
+                <i class="fa-solid fa-star"></i>
+            </button>
+        </div>
+    </figcaption>
+</figure>

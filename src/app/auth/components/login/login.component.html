@@ -1,10 +1,14 @@
 <form class="form-layout" autocomplete="off" [formGroup]="loginForm" (ngSubmit)="login()">
+    <h2>Iniciar sesión</h2>
     <input type="text" formControlName="username" placeholder="Usuario" />
     <input type="password" formControlName="password" placeholder="Contraseña" />
 
     <a class="forgotpass" routerLink="../restablecer">¿Olvidaste la contraseña?</a>
 
-    <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+    <button type="submit" [disabled]="loginForm.invalid" class="button">
+        <div *ngIf="load" class="loader"></div>
+        <span *ngIf="!load">Ingresar</span>
+    </button>
 
     <span>¿Aún no tienes cuenta? <a class="registrarse" routerLink="../registro">Registrate</a></span>
 </form>

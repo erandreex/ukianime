@@ -122,3 +122,14 @@ export interface AnimesLinks {
 export interface AnimesMeta {
     count: number;
 }
+
+export interface Error {
+    errors: ErrorElement;
+}
+
+export interface ErrorElement {
+    title: string;
+    detail: string;
+    code: string;
+    status: string;
+}

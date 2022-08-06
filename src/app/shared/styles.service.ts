@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 export interface styles {
+    theme: string;
     image: string;
     size: string;
     color: string;
 }
 
 export interface stylesAllowedOptions {
+    theme: string[];
     image: string[];
     size: string[];
     color: string[];
@@ -18,14 +20,16 @@ export interface stylesAllowedOptions {
 })
 export class StylesService {
     public allowedStyles: stylesAllowedOptions = {
-        image: ['image_day', 'image_night', 'image_pride'],
-        size: ['size_small', 'size_normal', 'size_large', 'size_xlarge'],
-        color: ['color_red', 'color_blue', 'color_orange'],
+        theme: ['theme_day', 'theme_night', 'theme_pride'],
+        image: ['image_ola'],
+        size: ['size_small', 'size_normal', 'size_large'],
+        color: ['color_red', 'color_blue', 'color_orange', 'color_green', 'color_purple'],
     };
 
     // Defaults
     private styleDefault: styles = {
-        image: 'image_night',
+        theme: 'theme_night',
+        image: 'image_ola',
         size: 'size_normal',
         color: 'color_orange',
     };

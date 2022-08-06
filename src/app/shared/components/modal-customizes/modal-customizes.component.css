@@ -1,6 +1,5 @@
-:host {
-    color: #000;
-}
+/* @import url("../../../../assets/css/estilos.css"); */
+
 
 ul {
     list-style-type: none;
@@ -8,41 +7,6 @@ ul {
     margin: 0;
 }
 
-  .todooscuro {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 0.3;
-    z-index: 1;
-    overflow: auto;
-  }
-
-  /* Modal Content */
-  .modal-content1 {
-    display: none;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%;
-    z-index: 2;
-    position: relative;
-    max-width: var(--tamano-maximo);
-
-
-    /* pointer-events: auto; */
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: 0.3rem;
-    outline: 0;
-  }
 
   .permitir-scroll {
     height: max-content;
@@ -50,20 +14,6 @@ ul {
     overflow-y: scroll;
   }
 
-  /* The Close Button */
-  .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
 
   /* Lista customizable */
 
@@ -81,21 +31,18 @@ ul {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
     gap: 10px;
+    padding: 8px 8px 8px 32px;
+    width: 250px;
   }
 
     ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
-    width: 100%;
     row-gap: 10px;
     column-gap: 5%;
-    background-color: rgba(238, 238, 238, 0.3);
-    border-radius: var(--border-radius);
-    padding: 10px;
+    width: 100%;
   }
 
     li {
@@ -103,19 +50,13 @@ ul {
     align-items: center;
     justify-content: center;
     border: 1px solid #888;
-    font-weight: 700;
-    border-radius: var(--border-radius);
-    height: 60px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
   }
-
-
 
   /* size-select */
 
-  .sizes > li {
-    background-color: rgb(187, 187, 187);
-    width: 47.5%;
-  }
 
   .sizes .size_small {
     font-size: 12px;
@@ -134,36 +75,35 @@ ul {
   }
 
 
-  /* Colores */
+/* Colores */
 
+.color_red {
+   background-color: #a10036;
+}
 
-  .colors > li {
-    flex-grow:0;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-  }
+.color_blue {
+    background-color: #0073a1;
+}
 
-  .colors .color_red {
-    background-color: red;
-  }
+.color_orange {
+    background-color: #f1612c;
 
-  .colors .color_blue {
-    background-color: blue;
-  }
+}
 
-  .colors .color_orange {
-    background-color: orange;
-  }
+.color_green {
+    background-color: #36a100;
+
+}
+
+.color_purple {
+    background-color: #71005b;
+}
+
 
 
 
 
 /* Imagen de fondo */
-
-.images > li {
-    width: 100%;
-  }
 
 .images .image_day {
     background-color: rgb(255, 255, 255);
@@ -173,13 +113,6 @@ ul {
     background-color: rgb(45, 45, 45);
 }
 
-
-
-    /* Variables utilizables */
-
-    .control {
-        display: block;
-      }
 
 
 @media screen and (min-width: 650px) {

@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, Input, Renderer2, ViewChild } from '@angular/core';
-import { Anime, Animes, Data } from '../../interfaces/anime.interface';
+import { Data } from '../../interfaces/anime.interface';
 
 @Component({
     selector: 'app-carrousel',
@@ -7,9 +7,12 @@ import { Anime, Animes, Data } from '../../interfaces/anime.interface';
     styleUrls: ['./carrousel.component.css'],
 })
 export class CarrouselComponent {
-    @Input('small') public small: boolean = true;
-    @Input('animes') public animes: Data[] = [];
+    @Input('animes') public animes: Data[] | any = [];
     @Input('title') public title: string = '';
+    @Input('error') error: boolean = false;
+
+    public sliderHeight: string = '250px';
+    public cardWidth: string = '200px';
 
     @ViewChild('slider', { static: false }) slider!: ElementRef;
     @ViewChild('slide_inner', { static: false }) slide_inner!: ElementRef;

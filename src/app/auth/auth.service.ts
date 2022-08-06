@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, of, tap } from 'rxjs';
+import { catchError, delay, map, of, Subject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AuthResponse, Usuario } from './interfaces/auth.interface';
 
@@ -27,6 +27,14 @@ export class AuthService {
 
     get isAuth() {
         return this.auth;
+    }
+
+    private loadAction = new Subject<string>();
+    loadAction$ = this.loadAction.asObservable().pipe(delay(2000));
+
+    alertLoad(value: string) {
+        console.log(value);
+        this.loadAction.next(value);
     }
 
     registro(firstname: string, username: string, password: string) {
@@ -70,11 +78,13 @@ export class AuthService {
         });
 
         return this.http.get<AuthResponse>(url, { headers }).pipe(
-            map((resp) => {
-                localStorage.setItem('token', resp.token!);
-                this.auth = true;
-                return resp.ok;
+            tap((resp) => {
+                if (resp.ok) {
+                    localStorage.setItem('token', resp.token!);
+                    this.auth = true;
+                }
             }),
+            map((resp) => resp.ok),
             catchError((err) => of(false))
         );
     }
@@ -88,12 +98,32 @@ export class AuthService {
         const body = { oldPassword, newPassword1, newPassword2 };
 
         return this.http.post<any>(url, body, { headers }).pipe(
-            tap(console.log),
-            map((resp) => {
+            tap((resp) => {
+                if (resp.ok) {
+                    localStorage.setItem('token', resp.token!);
+                    this.auth = true;
+                }
+            }),
+            map((resp) => resp.ok),
+            catchError((err) => of(false))
+        );
+    }
+
+    cambiarPassRest(newPassword1: string, newPassword2: string) {
+        const url = `${this.urlServer}/rest/cambiarPass`;
+        const headers = new HttpHeaders({
+            'x-rest': localStorage.getItem('x-rest') || '',
+        });
+
+        const body = { newPassword1, newPassword2 };
+
+        return this.http.post<any>(url, body, { headers }).pipe(
+            tap((resp) => {
+                console.log(resp);
                 localStorage.setItem('token', resp.token!);
                 this.auth = true;
-                return resp;
             }),
+            map((resp) => resp.ok),
             catchError((err) => of(false))
         );
     }

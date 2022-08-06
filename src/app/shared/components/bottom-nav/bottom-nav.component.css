@@ -4,7 +4,7 @@ ul {
 }
 
 section {
-    background-color: rgb(38, 38, 38);
+    background-color: var(--second-background);
     overflow: hidden;
     position: fixed;
     bottom: 0;
@@ -24,9 +24,9 @@ section {
 
   /* Style the links inside the navigation bar */
   .navbar li {
-    color: #f2f2f2;
-    font-size: 17px;
-    padding: 12px 15px;
+    color: var(--text-color);
+    font-size:var(--main-icon-size);
+    padding: 18px 25px;
   }
 
 
@@ -35,12 +35,13 @@ section {
   .navbar li:active,
   .navbar li:focus  {
     background-color: transparent;
-    color: gainsboro;
+    color: transparent;
+
   }
 
   /* Add a color to the active/current link */
   .navbar li a.active i {
-    color: #f1612c;
+    color: var(--first-color);
   }
 
 

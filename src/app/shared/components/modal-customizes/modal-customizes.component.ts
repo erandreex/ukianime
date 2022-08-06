@@ -11,9 +11,10 @@ import { styles, stylesAllowedOptions, StylesService } from '../../styles.servic
 })
 export class ModalCustomizesComponent {
     public estado: boolean = false;
-    private subscription!: Subscription;
+    public subscription!: Subscription;
 
     public optionsSelected: styles = {
+        theme: '',
         image: '',
         color: '',
         size: '',

@@ -11,12 +11,12 @@ import { ModalCustomizesComponent } from './components/modal-customizes/modal-cu
 import { SplitPipe } from './pipes/split.pipe';
 import { IndexComponent } from './index/index/index.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
-import { CardComponent } from './components/card/card.component';
 import { AuthIndexComponent } from './index/auth-index/auth-index.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { ToolsCardComponent } from './components/tools-card/tools-card.component';
-import { RestIndexComponent } from './index/rest-index/rest-index.component';
+import { CheckImageDirective } from './directives/check-image.directive';
+import { AnimeCardComponent } from './components/anime-card/anime-card.component';
 
 @NgModule({
     declarations: [
@@ -29,12 +29,12 @@ import { RestIndexComponent } from './index/rest-index/rest-index.component';
         SplitPipe,
         IndexComponent,
         CarrouselComponent,
-        CardComponent,
         AuthIndexComponent,
         PaginationComponent,
         ProfileCardComponent,
         ToolsCardComponent,
-        RestIndexComponent,
+        CheckImageDirective,
+        AnimeCardComponent,
     ],
     imports: [CommonModule, RouterModule],
     exports: [
@@ -44,11 +44,12 @@ import { RestIndexComponent } from './index/rest-index/rest-index.component';
         SidenavComponent,
         BottomNavComponent,
         ModalCustomizesComponent,
-        CardComponent,
+
         CarrouselComponent,
         PaginationComponent,
         ProfileCardComponent,
         ToolsCardComponent,
+        AnimeCardComponent,
     ],
 })
 export class SharedModule {}

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, delay } from 'rxjs';
 import { SharedService } from '../../shared.service';
 import { AuthService } from '../../../auth/auth.service';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
 @Component({
     selector: 'app-index',
@@ -10,18 +11,31 @@ import { AuthService } from '../../../auth/auth.service';
 })
 export class IndexComponent implements OnInit {
     public auth: boolean = false;
+    public load: boolean = true;
+
     public subscription!: Subscription;
     public subscription2!: Subscription;
 
-    public background: string = 'fondo-uki';
+    public background: string = 'fondo';
 
-    constructor(private sharedService: SharedService, private authService: AuthService) {
+    constructor(private sharedService: SharedService, private authService: AuthService, private router: Router) {
+        this.subscription2 = this.router.events.subscribe((value) => {
+            if (value instanceof NavigationStart) {
+                this.load = true;
+            }
+
+            if (value instanceof NavigationEnd) {
+                this.load = false;
+            }
+        });
+
         this.auth = this.authService.auth;
 
         this.subscription = this.sharedService.backgroundAction$.subscribe((value) => {
             this.background = value;
         });
     }
+
     ngOnInit(): void {
         if (localStorage.getItem('token')) {
             this.auth = true;
@@ -29,6 +43,7 @@ export class IndexComponent implements OnInit {
     }
 
     ngOnDestroy(): void {
-        this.subscription.unsubscribe;
+        this.subscription.unsubscribe();
+        this.subscription2.unsubscribe();
     }
 }

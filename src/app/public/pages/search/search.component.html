@@ -1,3 +1,18 @@
-<form action="" [formGroup]="searchForm" (ngSubmit)="buscar()">
-    <input type="text" formControlName="text" in />
+<form [formGroup]="searchForm" (ngSubmit)="buscar()">
+    <div class="group">
+        <input type="text" formControlName="text" class="input" required="" />
+        <span class="bar"></span>
+        <!-- <label>Buscar</label> -->
+    </div>
 </form>
+
+<hr />
+<ul class="favoritos-layout" *ngIf="!mostrar">
+    <li *ngFor="let anime of animes">
+        <app-anime-card [anime]="anime"></app-anime-card>
+    </li>
+</ul>
+
+<div *ngIf="mostrar" class="not-found">
+    <h2>No se han encontrado animes para la busqueda: {{ termino }}</h2>
+</div>

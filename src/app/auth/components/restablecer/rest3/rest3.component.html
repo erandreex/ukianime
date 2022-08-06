@@ -1,1 +1,12 @@
-<p>rest3 works!</p>
+<form class="form-layout" autocomplete="off" [formGroup]="rest3Form" (ngSubmit)="submit()">
+    <h2>Restablecer contraseña</h2>
+
+    <input type="password" formControlName="password" placeholder="Nueva contraseña" />
+    <input type="password" formControlName="password2" placeholder="Repita contraseña" />
+
+    <button type="submit" [disabled]="rest3Form.invalid" class="button">
+        <div *ngIf="load" class="loader"></div>
+        <span *ngIf="!load">Restablecer</span>
+    </button>
+    <a class="registrarse" routerLink="/login">Salir</a>
+</form>

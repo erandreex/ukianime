@@ -1,39 +1,35 @@
-<div class="modal-content1" [class.control]="estado">
-    <span (click)="modal('cerrar')" class="close">&times;</span>
-    <span>Perzonalizar</span>
-    <hr />
+<div class="custom-list">
+    <div class="size-select">
+        <span>Tamaño</span>
+        <ul class="sizes">
+            <li *ngFor="let size of allStyles!.size" (click)="selectStyle('size', size)" [class]="size">
+                {{ size | split }}
+            </li>
+        </ul>
+    </div>
 
-    <div class="permitir-scroll">
-        <div class="custom-list">
-            <div class="size-select">
-                <span>Tamaño de la fuente</span>
-                <ul class="sizes">
-                    <li *ngFor="let size of allStyles!.size" (click)="selectStyle('size', size)" [class]="size">
-                        {{ size | split }}
-                    </li>
-                </ul>
-            </div>
-            <div class="color-select">
-                <span>Color</span>
+    <div class="theme-select">
+        <span>Tema</span>
 
-                <ul class="colors">
-                    <li
-                        *ngFor="let color of allStyles?.color"
-                        (click)="selectStyle('color', color)"
-                        [class]="color"
-                    ></li>
-                </ul>
-            </div>
-            <div class="image-select">
-                <span>Imagen de fondo</span>
-                <ul class="images">
-                    <li *ngFor="let image of allStyles!.image" (click)="selectStyle('image', image)" [class]="image">
-                        {{ image | split }}
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <ul class="theme">
+            <li *ngFor="let theme of allStyles?.theme" (click)="selectStyle('theme', theme)" [class]="theme"></li>
+        </ul>
+    </div>
+
+    <div class="color-select">
+        <span>Color</span>
+
+        <ul class="colors">
+            <li *ngFor="let color of allStyles?.color" (click)="selectStyle('color', color)" [class]="color"></li>
+        </ul>
+    </div>
+
+    <div class="image-select">
+        <span>Fondo</span>
+        <ul class="images">
+            <li *ngFor="let image of allStyles!.image" (click)="selectStyle('image', image)" [class]="image">
+                {{ image | split }}
+            </li>
+        </ul>
     </div>
 </div>
-
-<div class="todooscuro" [class.control]="estado" (click)="modal('cerrar')"></div>

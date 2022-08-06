@@ -1,0 +1,85 @@
+/**************************** Temas ************************/
+
+.theme_day {
+
+}
+
+.theme_night {
+    /* Text */
+    --text-color: #ebeaea;
+    --main-color: #959595;
+    --submain-color: #1e1e1e;
+
+    /* Background */
+    --main-background: #222222;
+    --second-background: #343131;
+    --third-background: #1f1f1f;
+    --four-background: #141414;
+
+    /* Border */
+    --theme-color-border: #717171;
+
+
+}
+
+.theme_pride {
+
+}
+
+/**************************** Imagen ************************/
+
+.image_ola {
+
+}
+
+
+/**************************** Tamaños ***********************/
+
+.size_small {
+    --title-size: 20px;
+    --category-size: 18px;
+    --name-size: 16px;
+    --text-size: 14px;
+}
+
+.size_normal {
+    --title-size: 22px;
+    --category-size: 20px;
+    --name-size: 18px;
+    --text-size: 16px;
+    --anime-name-size: 14px;
+    --main-icon-size: 16px;
+}
+
+.size_large {
+    --title-size: 24px;
+    --category-size: 22px;
+    --name-size: 20px;
+    --text-size: 18px;
+}
+
+
+/**************************** Colores ***********************/
+
+
+.color_red {
+    --first-color: #a10036;
+}
+
+.color_blue {
+    --first-color: #0073a1;
+}
+
+.color_orange {
+    --first-color: #f1612c;
+}
+
+
+.color_green {
+    --first-color: #36a100;
+
+}
+
+.color_purple {
+    --first-color: #71005b;
+}

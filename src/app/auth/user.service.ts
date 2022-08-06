@@ -84,4 +84,34 @@ export class UserService {
             catchError((err) => of(false))
         );
     }
+
+    addRemoveFavorite(anime: string) {
+        const url = `${this.urlServer}/favorite/addRemove`;
+        const headers = new HttpHeaders({
+            'x-token': localStorage.getItem('token') || '',
+        });
+
+        const body = { anime };
+
+        return this.http.post<any>(url, body, { headers }).pipe(
+            map((resp) => {
+                return resp;
+            }),
+            catchError((err) => of(false))
+        );
+    }
+
+    listFavorites(page: number) {
+        const url = `${this.urlServer}/favorite/list?page=${page}`;
+        const headers = new HttpHeaders({
+            'x-token': localStorage.getItem('token') || '',
+        });
+
+        return this.http.get<any>(url, { headers }).pipe(
+            map((resp) => {
+                return resp;
+            }),
+            catchError((err) => of(false))
+        );
+    }
 }

@@ -1,8 +1,11 @@
 <div [class]="background">
     <app-header [auth]="auth"></app-header>
-    <app-modal-customizes></app-modal-customizes>
 
-    <main>
+    <div *ngIf="load" class="paracargar">
+        <div class="loader"></div>
+    </div>
+
+    <main *ngIf="!load">
         <router-outlet></router-outlet>
     </main>
 

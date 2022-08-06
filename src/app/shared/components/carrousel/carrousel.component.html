@@ -1,21 +1,31 @@
-<div class="carousel">
+<div class="carousel" [style.height]="error ? sliderHeight : ''">
     <h2 class="titulo-categoria">{{ title }}</h2>
 
-    <div class="carousel-layout">
-        <button class="slideBtn" (click)="moveBtn('left')">
-            <img class="svgd" src="./../../../../assets/Left-arrow.svg" alt="" />
-        </button>
+    <div *ngIf="!error">
+        <div *ngIf="animes.length > 0" class="carousel-layout">
+            <button class="slideBtn" (click)="moveBtn('left')">
+                <img class="svgd" src="./../../../../assets/Left-arrow.svg" alt="" />
+            </button>
 
-        <div #slider class="slider" [class.small]="small">
-            <ul #slide_inner class="slider-inner">
-                <li *ngFor="let anime of animes" class="slide-card">
-                    <app-card [anime]="anime" [width]="'200xp'" [height]="'250px'"></app-card>
-                </li>
-            </ul>
+            <div #slider class="slider" [style.height]="sliderHeight">
+                <ul #slide_inner class="slider-inner">
+                    <li *ngFor="let anime of animes" class="slide-card" [style.width]="cardWidth">
+                        <app-anime-card [anime]="anime" [width]="'200xp'" [height]="'250px'"></app-anime-card>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="slideBtn" (click)="moveBtn('right')">
+                <img class="svgd" src="./../../../../assets/Right-arrow.svg" alt="" />
+            </button>
         </div>
 
-        <button class="slideBtn" (click)="moveBtn('right')">
-            <img class="svgd" src="./../../../../assets/Right-arrow.svg" alt="" />
-        </button>
+        <div *ngIf="animes.length == 0" class="paracargar" [style.height]="sliderHeight">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <div *ngIf="error" class="mensajeError">
+        <span>Error: ha ocurrido algo inesperado</span>
     </div>
 </div>

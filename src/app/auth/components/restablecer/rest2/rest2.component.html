@@ -1,1 +1,10 @@
-<p>rest2 works!</p>
+<form class="form-layout" autocomplete="off" [formGroup]="rest2Form" (ngSubmit)="submit()">
+    <h2>{{ pregunta }}</h2>
+    <input type="text" formControlName="answer" placeholder="Respuesta" />
+
+    <button type="submit" [disabled]="rest2Form.invalid" class="button">
+        <div *ngIf="load" class="loader"></div>
+        <span *ngIf="!load">Continuar</span>
+    </button>
+    <a class="registrarse" routerLink="/login">Salir</a>
+</form>

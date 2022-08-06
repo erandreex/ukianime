@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../user.service';
+import { Subscription, take } from 'rxjs';
 
 @Component({
     selector: 'app-favorites',
@@ -6,45 +8,22 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./favorites.component.css'],
 })
 export class FavoritesComponent implements OnInit {
-    constructor() {}
+    constructor(private userService: UserService) {}
 
-    public animes: any = [
-        {
-            urlImage: '../../../../assets/viewtiful.jpg',
-            name: 'Viewtiful Joe',
-            path: '1',
-        },
-        {
-            urlImage: '../../../../assets/one.jpg',
-            name: 'One Outs',
-            path: '2',
-        },
-        {
-            urlImage: '../../../../assets/shingeki.jpg',
-            name: 'Shingeki No Kyojin',
-            path: '3',
-        },
-        {
-            urlImage: '../../../../assets/dragonball.jpg',
-            name: 'Dragon Ball Super',
-            path: '4',
-        },
-        {
-            urlImage: '../../../../assets/narutoShippuden.jpg',
-            name: 'Naruto Shippuden',
-            path: '5',
-        },
-        {
-            urlImage: '../../../../assets/yugioh.jpg',
-            name: 'Yugioh',
-            path: '6',
-        },
-        {
-            urlImage: '../../../../assets/pokemon.jfif',
-            name: 'Pokemon',
-            path: '7',
-        },
-    ];
+    public subscription!: Subscription;
 
-    ngOnInit(): void {}
+    public animes: string[] | any = [];
+
+    ngOnInit(): void {
+        this.subscription = this.userService
+            .listFavorites(1)
+            .pipe(take(1))
+            .subscribe((value) => {
+                this.animes = value.lista;
+            });
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
+    }
 }

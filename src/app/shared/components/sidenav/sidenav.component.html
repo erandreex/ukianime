@@ -5,6 +5,10 @@
             <a routerLink="/{{ ruta.path }}">{{ ruta.name }}</a>
         </li>
     </ul>
+
+    <hr />
+
+    <app-modal-customizes></app-modal-customizes>
 </div>
 
 <div class="todooscuro" [class.mostrarBG]="backgroundO" (click)="action('cerrar')"></div>
