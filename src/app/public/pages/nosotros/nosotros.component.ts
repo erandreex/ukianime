@@ -16,42 +16,42 @@ export class NosotrosComponent {
         {
             name: 'Francisco Perez',
             role: 'Desarrollador',
-            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eum, et expedita non assumenda cumque tempor econsequatur impedit dolorum atque omnis enim ratione velit vitae quam, rerum accusamus ab eligendi',
+            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
             pathImage: '../../../../assets/owners/Francisco.png',
         },
         {
             name: 'Ernesto Solís',
             role: 'Desarrollador',
-            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eum, et expedita non assumenda cumque tempor econsequatur impedit dolorum atque omnis enim ratione velit vitae quam, rerum accusamus ab eligendi',
+            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
             pathImage: '../../../../assets/owners/Ernesto.png',
         },
         {
             name: 'Alejandro Andrade',
             role: 'Desarrollador',
-            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eum, et expedita non assumenda cumque tempor econsequatur impedit dolorum atque omnis enim ratione velit vitae quam, rerum accusamus ab eligendi',
+            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
             pathImage: '../../../../assets/owners/Andrade.png',
         },
         {
             name: 'Melitón Rodriguez',
             role: 'Diseñador',
-            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eum, et expedita non assumenda cumque tempor econsequatur impedit dolorum atque omnis enim ratione velit vitae quam, rerum accusamus ab eligendi',
+            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
             pathImage: '../../../../assets/owners/Meliton.png',
         },
         {
             name: 'Juan Huerta',
             role: 'Diseñador',
-            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eum, et expedita non assumenda cumque tempor econsequatur impedit dolorum atque omnis enim ratione velit vitae quam, rerum accusamus ab eligendi',
+            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
             pathImage: '../../../../assets/owners/Huerta.png',
         },
         {
             name: 'Alfredo Castillo',
             role: 'Diseñador',
-            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eum, et expedita non assumenda cumque tempor econsequatur impedit dolorum atque omnis enim ratione velit vitae quam, rerum accusamus ab eligendi',
+            desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
             pathImage: '../../../../assets/owners/Alfredo.png',
         },
     ];
 
     ngOnDestroy(): void {
-        this.sharedService.alertBackground('fondo-uki');
+        this.sharedService.alertBackground('fondo');
     }
 }

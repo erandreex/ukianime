@@ -12,3 +12,9 @@
 
     <span>¿Aún no tienes cuenta? <a class="registrarse" routerLink="../registro">Registrate</a></span>
 </form>
+
+<section class="errors" *ngIf="errors.length !== 0">
+    <ul>
+        <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+</section>

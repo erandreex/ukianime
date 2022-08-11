@@ -10,10 +10,10 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class Rest3Component implements OnInit {
     public load: boolean = false;
+    public errors: string[] = [];
 
     rest3Form: FormGroup = this.fb.group({
-        password: ['', [Validators.required]],
-        password2: ['', [Validators.required]],
+        password: ['', [Validators.required, Validators.minLength(1)]],
     });
 
     constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {}
@@ -21,16 +21,16 @@ export class Rest3Component implements OnInit {
     ngOnInit(): void {}
 
     submit() {
-        const { password, password2 } = this.rest3Form.value;
+        const { password } = this.rest3Form.value;
         this.load = true;
 
-        this.authService.cambiarPassRest(password, password2).subscribe((ok) => {
-            if (ok === true) {
+        this.authService.cambiarPassRest(password).subscribe((resp) => {
+            if (resp === true) {
                 localStorage.removeItem('x-rest');
                 this.router.navigateByUrl('/browse');
             } else {
                 this.load = false;
-                console.log('Lanzar error');
+                this.errors = resp.errors;
             }
         });
     }

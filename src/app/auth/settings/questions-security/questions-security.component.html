@@ -1,4 +1,6 @@
 <form class="form-layout" autocomplete="off" [formGroup]="questionSecurityForm" (ngSubmit)="update()">
+    <h2>Preguntas de seguridad</h2>
+
     <section class="imputs-layout">
         <div class="group">
             <input type="text" formControlName="answer1" class="input" required="" />
@@ -19,5 +21,18 @@
         </div>
     </section>
 
-    <button type="submit">Actualizar</button>
+    <button type="submit">
+        <div *ngIf="load" class="loader"></div>
+        <span *ngIf="!load">Actualizar</span>
+    </button>
 </form>
+
+<section class="errors" *ngIf="errors.length !== 0">
+    <ul>
+        <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+</section>
+
+<section class="exito" *ngIf="exito">
+    <p>Datos actualizados con exito!</p>
+</section>

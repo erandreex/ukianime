@@ -4,7 +4,6 @@
     <input type="text" formControlName="firstname" placeholder="Nombre" />
     <input type="text" formControlName="username" placeholder="Usuario" />
     <input type="password" formControlName="password" placeholder="Contraseña" />
-    <input type="password" formControlName="password2" placeholder="Repita contraseña" />
 
     <button type="submit" [disabled]="registroForm.invalid" class="button">
         <div *ngIf="load" class="loader"></div>
@@ -13,3 +12,9 @@
 
     <span>¿Ya tienes una cuenta? <a class="registrarse" routerLink="../login">Ingresar</a></span>
 </form>
+
+<section class="errors" *ngIf="errors.length !== 0">
+    <ul>
+        <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+</section>

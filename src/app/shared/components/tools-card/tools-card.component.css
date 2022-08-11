@@ -1,11 +1,12 @@
-h3, p, h4 {
+h2, span, p{
     margin: 0;
     padding: 0;
 
     font-size: var(--category-size);
+    color: var(--text-color);
 }
 
-h4 {
+span {
     font-size: var(--name-size);
 
 }

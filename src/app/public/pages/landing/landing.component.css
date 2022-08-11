@@ -1,0 +1,49 @@
+@import url('../../../../assets/css/formularios.css');
+
+.inicio {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    border-radius: var(--border-radius);
+}
+
+.carusel {
+    backdrop-filter: blur(35px);
+}
+
+.p3-creadores{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align:justify;
+}
+
+.kitsu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.kitsuimg {
+    width: 50px;
+    height: 50px;
+}

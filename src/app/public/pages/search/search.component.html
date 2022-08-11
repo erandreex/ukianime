@@ -1,9 +1,5 @@
 <form [formGroup]="searchForm" (ngSubmit)="buscar()">
-    <div class="group">
-        <input type="text" formControlName="text" class="input" required="" />
-        <span class="bar"></span>
-        <!-- <label>Buscar</label> -->
-    </div>
+    <input type="text" #input formControlName="text" class="input" required="" autofocus />
 </form>
 
 <hr />

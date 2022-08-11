@@ -14,7 +14,6 @@ import { ProfileComponent } from './settings/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChangePassComponent } from './settings/change-pass/change-pass.component';
 import { QuestionsSecurityComponent } from './settings/questions-security/questions-security.component';
-import { DeleteComponent } from './settings/delete/delete.component';
 import { DesactivateComponent } from './settings/desactivate/desactivate.component';
 import { Rest1Component } from './components/restablecer/rest1/rest1.component';
 import { Rest2Component } from './components/restablecer/rest2/rest2.component';
@@ -29,7 +28,6 @@ import { Rest3Component } from './components/restablecer/rest3/rest3.component';
         ProfileComponent,
         ChangePassComponent,
         QuestionsSecurityComponent,
-        DeleteComponent,
         DesactivateComponent,
         Rest1Component,
         Rest2Component,

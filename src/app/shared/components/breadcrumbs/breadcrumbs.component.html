@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let bread of breadcrumbs; let i = index">
+        <a *ngIf="i == 0" routerLink="/{{ bread }}">
+            {{ bread }}
+        </a>
+
+        <a *ngIf="i !== 0" routerLink="/{{ breadcrumbs[0] }}/{{ bread }}">
+            {{ bread }}
+        </a>
+        <span *ngIf="breadcrumbs.length - 1 !== i"> / </span>
+    </li>
+</ul>

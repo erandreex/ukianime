@@ -9,7 +9,11 @@ main {
 
 .fondo {
     background-color: var(--main-background);
-    background-image: url("../../../../assets/ola_chevere.svg");
+    background-image: var(--imagen-ola);
+}
+
+.fondo-solid {
+    background-color: var(--main-background);
 }
 
 

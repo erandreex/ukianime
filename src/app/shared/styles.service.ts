@@ -20,7 +20,7 @@ export interface stylesAllowedOptions {
 })
 export class StylesService {
     public allowedStyles: stylesAllowedOptions = {
-        theme: ['theme_day', 'theme_night', 'theme_pride'],
+        theme: ['theme_day', 'theme_night', 'theme_navy'],
         image: ['image_ola'],
         size: ['size_small', 'size_normal', 'size_large'],
         color: ['color_red', 'color_blue', 'color_orange', 'color_green', 'color_purple'],

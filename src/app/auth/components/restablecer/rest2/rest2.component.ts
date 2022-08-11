@@ -12,9 +12,10 @@ import { delay } from 'rxjs';
 export class Rest2Component implements OnInit {
     public pregunta: string = '';
     public load: boolean = false;
+    public errors: string[] = [];
 
     rest2Form: FormGroup = this.fb.group({
-        answer: ['', [Validators.required]],
+        answer: ['', Validators.required, Validators.minLength(1)],
     });
 
     constructor(
@@ -35,13 +36,12 @@ export class Rest2Component implements OnInit {
         this.restService
             .answer(answer)
             .pipe(delay(1000))
-            .subscribe((ok) => {
-                if (ok === true) {
+            .subscribe((resp) => {
+                if (resp === true) {
                     this.router.navigate(['pass'], { relativeTo: this.activatedRoute });
                 } else {
                     this.load = false;
-
-                    console.log('Lanzar error');
+                    this.errors = resp.errors;
                 }
             });
     }

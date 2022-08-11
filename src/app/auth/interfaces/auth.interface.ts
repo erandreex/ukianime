@@ -1,12 +1,11 @@
 export interface AuthResponse {
     ok: boolean;
-    uid?: string;
-    name?: string;
+    user?: Usuario;
     token?: string;
     msg?: string;
 }
 
 export interface Usuario {
-    uid: string;
-    name: string;
+    firstname?: string;
+    lastname?: string;
 }

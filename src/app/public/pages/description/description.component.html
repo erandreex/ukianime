@@ -1,75 +1,85 @@
-<div class="desc-layout">
-    <div class="parteA">
-        <img
-            [src]="anime?.attributes?.posterImage?.original || anime?.attributes?.posterImage?.original"
-            class="portada-imagen"
-        />
+<div class="centro">
+    <div *ngIf="!anime" class="paracargar">
+        <div class="loader"></div>
     </div>
-    <div class="parteB">
-        <div class="main-info">
-            <div class="info-left">
-                <span class="info-title">{{ anime?.attributes?.canonicalTitle }}</span>
 
-                <div class="rating">
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
+    <div *ngIf="anime" class="desc-layout">
+        <div class="parteA">
+            <img
+                [src]="anime.attributes.posterImage.original || anime.attributes.posterImage.original"
+                (load)="load()"
+                onerror="this.src='../../../../assets/imagen-no-disponible.jpg'"
+                class="portada-imagen"
+                [hidden]="!viewImage"
+            />
+            <div class="loader" alt="prueba" [hidden]="viewImage"></div>
+        </div>
+        <div class="parteB">
+            <div class="main-info">
+                <div class="info-left">
+                    <span class="info-title">{{ anime.attributes.canonicalTitle }}</span>
+
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                        <span>{{ anime.attributes.averageRating }} | Rank: {{ anime.attributes.ratingRank }}</span>
                     </div>
+                </div>
 
-                    <span>{{ anime?.attributes?.averageRating }} | Rank: {{ anime?.attributes?.ratingRank }}</span>
+                <div *ngIf="auth" class="info-right">
+                    <button (click)="addRemoveFavorite(anime!.id)" [class.favorito]="favorito">
+                        <i class="fa-solid fa-star"></i>
+                    </button>
                 </div>
             </div>
 
-            <div class="info-right">
-                <button (click)="aqui('s')">
-                    <i class="fa-solid fa-star"></i>
-                </button>
+            <ul class="meta-info">
+                <li>
+                    <span>Tipo: {{ anime.attributes.showType }}</span>
+                </li>
+                <li>
+                    <span>Capitulos: {{ anime.attributes.episodeCount }}</span>
+                </li>
+
+                <li>
+                    <span>Estado: {{ anime.attributes.status }}</span>
+                </li>
+            </ul>
+
+            <div class="claroo">
+                <div class="slide-data">
+                    <ul class="list-tag">
+                        <li *ngFor="let genero of generos || categorias; index as i" class="genero-list">
+                            <span>{{ genero.attributes.name }}</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
+            <ul class="generos-list">
+                <li *ngFor="let categoria of categorias">
+                    <span>{{ categoria.attributes.title }}</span>
+                </li>
+            </ul>
+
+            <p>
+                {{ anime.attributes.description }}
+            </p>
+
+            <ul class="meta-info">
+                <li>
+                    <span>Primera emisión: {{ anime.attributes.startDate }}</span>
+                </li>
+                <li>
+                    <span>Ultima emisión: {{ anime.attributes.endDate }}</span>
+                </li>
+            </ul>
         </div>
-
-        <ul class="meta-info">
-            <li>
-                <span>Tipo: {{ anime?.attributes?.showType }}</span>
-            </li>
-            <li>
-                <span>Capitulos: {{ anime?.attributes?.episodeCount }}</span>
-            </li>
-
-            <li>
-                <span>Estado: {{ anime?.attributes?.status }}</span>
-            </li>
-        </ul>
-
-        <div class="claroo">
-            <div class="slide-data">
-                <ul class="list-tag">
-                    <li *ngFor="let genero of generos || categorias; index as i" class="genero-list">
-                        <span>{{ genero.attributes?.name }}</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <ul class="generos-list">
-            <li *ngFor="let categoria of categorias">
-                <span>{{ categoria?.attributes?.title }}</span>
-            </li>
-        </ul>
-
-        <p>
-            {{ anime?.attributes?.description }}
-        </p>
-
-        <ul class="meta-info">
-            <li>
-                <span>Primera emisión: {{ anime?.attributes?.startDate }}</span>
-            </li>
-            <li>
-                <span>Ultima emisión: {{ anime?.attributes?.endDate }}</span>
-            </li>
-        </ul>
     </div>
 </div>

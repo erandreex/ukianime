@@ -45,7 +45,7 @@ export class UserService {
                 }
             }),
             map((resp) => resp.ok),
-            catchError((err) => of(err.error.msg))
+            catchError((err) => of(err.error))
         );
     }
 
@@ -58,9 +58,7 @@ export class UserService {
         const body = { question, answer };
 
         return this.http.post<any>(url, body, { headers }).pipe(
-            tap(console.log),
             map((resp) => {
-                console.log(resp);
                 return resp;
             }),
             catchError((err) => of(false))
@@ -76,9 +74,7 @@ export class UserService {
         const body = { question };
 
         return this.http.post<any>(url, body, { headers }).pipe(
-            tap(console.log),
             map((resp) => {
-                console.log(resp);
                 return resp;
             }),
             catchError((err) => of(false))
@@ -110,6 +106,36 @@ export class UserService {
         return this.http.get<any>(url, { headers }).pipe(
             map((resp) => {
                 return resp;
+            }),
+            catchError((err) => of(false))
+        );
+    }
+
+    changeStatus(password: string) {
+        const url = `${this.urlServer}/user/changeStatus`;
+        const body = { password };
+        const headers = new HttpHeaders({
+            'x-token': localStorage.getItem('token') || '',
+        });
+
+        return this.http.post<any>(url, body, { headers }).pipe(
+            map((resp) => {
+                return resp.ok;
+            }),
+            catchError((err) => of(err.error))
+        );
+    }
+
+    existFavorite(anime: string) {
+        const url = `${this.urlServer}/favorite/exist`;
+        const body = { anime };
+        const headers = new HttpHeaders({
+            'x-token': localStorage.getItem('token') || '',
+        });
+
+        return this.http.post<any>(url, body, { headers }).pipe(
+            map((resp) => {
+                return resp.ok;
             }),
             catchError((err) => of(false))
         );

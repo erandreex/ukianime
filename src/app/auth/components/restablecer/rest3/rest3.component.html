@@ -2,7 +2,6 @@
     <h2>Restablecer contraseña</h2>
 
     <input type="password" formControlName="password" placeholder="Nueva contraseña" />
-    <input type="password" formControlName="password2" placeholder="Repita contraseña" />
 
     <button type="submit" [disabled]="rest3Form.invalid" class="button">
         <div *ngIf="load" class="loader"></div>
@@ -10,3 +9,9 @@
     </button>
     <a class="registrarse" routerLink="/login">Salir</a>
 </form>
+
+<section class="errors" *ngIf="errors.length !== 0">
+    <ul>
+        <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+</section>

@@ -15,7 +15,7 @@ export class ValidarTokenGuard implements CanActivate, CanLoad, CanActivateChild
                 if (!valid) {
                     localStorage.removeItem('token');
 
-                    this.router.navigateByUrl('/');
+                    this.router.navigateByUrl('/login');
                 }
             })
         );
@@ -26,7 +26,7 @@ export class ValidarTokenGuard implements CanActivate, CanLoad, CanActivateChild
                 if (!valid) {
                     localStorage.removeItem('token');
 
-                    this.router.navigateByUrl('/');
+                    this.router.navigateByUrl('/login');
                 }
             })
         );
@@ -38,7 +38,7 @@ export class ValidarTokenGuard implements CanActivate, CanLoad, CanActivateChild
                 if (!valid) {
                     localStorage.removeItem('token');
 
-                    this.router.navigateByUrl('/');
+                    this.router.navigateByUrl('/login');
                 }
             })
         );

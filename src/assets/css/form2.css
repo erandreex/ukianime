@@ -10,7 +10,7 @@ form {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 25px;
-    width: 275px;
+    width: 100%;
 }
 
 .group {
@@ -23,8 +23,10 @@ form {
     border: none;
     border-bottom: 1px solid #515151;
     background: transparent;
-    color: aqua;
+    color: var(--text-color);
+    font-size: var(--name-size);
     width: 100%;
+
    }
 
    .input:focus {
@@ -32,9 +34,11 @@ form {
    }
 
 
-
+span {
+    color: var(--text-color);
+}
    label {
-    color: #999;
+    color: var(--text-color);
     font-weight: normal;
     position: absolute;
     pointer-events: none;
@@ -85,6 +89,42 @@ form {
 
 
 
-   button {
-    width: 200px;
-   }
+   button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background: var(--first-color);
+    border: none;
+    height: 3rem;
+    width: 100%;
+    font-size: var(--name-size);
+    font-weight: 550;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.errors {
+    margin-top: 40px;
+    background-color: var(--error-bg-color);
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: var(--border-radius);
+}
+
+.errors ul {
+    margin: 5px;
+}
+
+
+.exito {
+    margin-top: 40px;
+    padding: 10px;
+    background-color: var(--exito-bg-color);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+}
+
+.exito p {
+    margin: 5px 0px;
+}

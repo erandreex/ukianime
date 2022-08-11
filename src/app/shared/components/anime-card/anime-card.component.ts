@@ -53,8 +53,4 @@ export class AnimeCardComponent implements OnInit, OnDestroy {
         }
         this.subscription.unsubscribe();
     }
-
-    addRemoveFavorite(anime_id: string) {
-        this.userService.addRemoveFavorite(anime_id).subscribe((value) => {});
-    }
 }

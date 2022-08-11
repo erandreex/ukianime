@@ -12,6 +12,13 @@ h3 {
 
 a {
     font-size: var(--name-size);
+    color: var(--text-color);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: var(--category-size);
+    color: var(--text-color);
 }
 
 /* ----- Footer ----- */
@@ -63,6 +70,19 @@ a {
     white-space: nowrap;
 }
 
+.kitsu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.kitsuimg {
+    width: 50px;
+    height: 50px;
+}
+
 /* Second Footer */
 
 .barra {
@@ -111,6 +131,11 @@ a {
     .espacio {
         height: 0px;
         display: none;
+    }
+
+    .kitsu {
+        justify-content: center;
+
     }
 
 }

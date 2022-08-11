@@ -14,31 +14,35 @@ export class SharedService {
 
     public rutas: rutas[] = [
         {
-            path: 'nosotros',
-            name: 'Nosotros',
-        },
-        {
             path: 'browse',
             name: 'Browse',
+        },
+        {
+            path: 'nosotros',
+            name: 'Nosotros',
         },
         {
             path: 'tecnologias',
             name: 'Tecnologias',
         },
+        {
+            path: 'search',
+            name: 'Buscar',
+        },
     ];
 
-    private modalAction = new Subject<any>();
-    modalAction$ = this.modalAction.asObservable();
+    private accountAction = new Subject<any>();
+    accountAction$ = this.accountAction.asObservable();
+
+    alertAccount(action: string) {
+        this.accountAction.next(action);
+    }
 
     private sidenavAction = new Subject<any>();
     sidenavAction$ = this.sidenavAction.asObservable();
 
     private backgroundAction = new Subject<any>();
     backgroundAction$ = this.backgroundAction.asObservable();
-
-    alertModal(action: string) {
-        this.modalAction.next(action);
-    }
 
     alertSidenav(action: string) {
         this.sidenavAction.next(action);

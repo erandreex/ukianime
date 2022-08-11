@@ -5,7 +5,7 @@
             <i class="fa-solid fa-angle-left fa-lg"></i>
         </li>
 
-        <li id="logoMobile" routerLink="/" class="logo">
+        <li id="logoMobile" routerLink="/browse" class="logo">
             <img src="https://i.imgur.com/bYacHHK.png" class="logo-img" />
             <span class="titulo">Ukianime</span>
         </li>
@@ -17,7 +17,7 @@
 
     <ul id="noMobileHeader" class="header-layout">
         <li class="izquierda">
-            <div class="logo">
+            <div class="logo" routerLink="/">
                 <img src="https://i.imgur.com/bYacHHK.png" class="logo-img" />
                 <span class="titulo">Ukianime</span>
             </div>
@@ -34,22 +34,23 @@
                 <li *ngFor="let ruta of rutasAuth">
                     <a routerLink="/{{ ruta.path }}">
                         <i class="{{ ruta.icon }}"></i>
+                        {{ ruta.name }}
                     </a>
                 </li>
             </ul>
 
             <div *ngIf="!auth" id="loginActions">
-                <button>Registro</button>
-                <button>Login</button>
+                <button routerLink="/registro">Registro</button>
+                <button routerLink="/login">Ingresar</button>
             </div>
 
-            <div *ngIf="auth" class="user">
+            <div *ngIf="auth" class="user" routerLink="/account">
                 <i class="fa-solid fa-circle-user fa-lg"></i>
-                <span id="username">Ernesto</span>
+                <span id="username">{{ user?.firstname }}</span>
             </div>
 
             <ul class="iconos">
-                <li><i (click)="modal('abrir')" class="fa-solid fa-gear fa-lg"></i></li>
+                <li><i (click)="sidenav('abrir')" class="fa-solid fa-gear fa-lg"></i></li>
             </ul>
         </li>
     </ul>

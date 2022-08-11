@@ -29,6 +29,10 @@ section {
     padding: 18px 25px;
   }
 
+  .navbar li a {
+    color: var(--text-color);
+  }
+
 
   /* Change the color of links on hover */
   .navbar li:hover,

@@ -28,7 +28,7 @@ export class RestService {
                 localStorage.setItem('x-rest', resp.token!);
                 return resp.ok;
             }),
-            catchError((err) => of(false))
+            catchError((err) => of(err.error))
         );
     }
 
@@ -62,7 +62,7 @@ export class RestService {
                 localStorage.setItem('x-rest', resp.token!);
                 return resp.ok;
             }),
-            catchError((err) => of(false))
+            catchError((err) => of(err.error))
         );
     }
 

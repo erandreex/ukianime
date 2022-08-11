@@ -2,7 +2,12 @@
     <div class="size-select">
         <span>Tamaño</span>
         <ul class="sizes">
-            <li *ngFor="let size of allStyles!.size" (click)="selectStyle('size', size)" [class]="size">
+            <li
+                *ngFor="let size of allStyles!.size"
+                (click)="selectStyle('size', size)"
+                [class]="size"
+                [class.active]="optionsSelected['size'] == size"
+            >
                 {{ size | split }}
             </li>
         </ul>
@@ -12,7 +17,12 @@
         <span>Tema</span>
 
         <ul class="theme">
-            <li *ngFor="let theme of allStyles?.theme" (click)="selectStyle('theme', theme)" [class]="theme"></li>
+            <li
+                *ngFor="let theme of allStyles?.theme"
+                (click)="selectStyle('theme', theme)"
+                [class]="theme"
+                [class.active]="optionsSelected['theme'] == theme"
+            ></li>
         </ul>
     </div>
 
@@ -20,16 +30,24 @@
         <span>Color</span>
 
         <ul class="colors">
-            <li *ngFor="let color of allStyles?.color" (click)="selectStyle('color', color)" [class]="color"></li>
+            <li
+                *ngFor="let color of allStyles?.color"
+                (click)="selectStyle('color', color)"
+                [class]="color"
+                [class.active]="optionsSelected['color'] == color"
+            ></li>
         </ul>
     </div>
 
     <div class="image-select">
         <span>Fondo</span>
         <ul class="images">
-            <li *ngFor="let image of allStyles!.image" (click)="selectStyle('image', image)" [class]="image">
-                {{ image | split }}
-            </li>
+            <li
+                *ngFor="let image of allStyles!.image"
+                (click)="selectStyle('image', image)"
+                [class]="image"
+                [class.active]="optionsSelected['image'] == image"
+            ></li>
         </ul>
     </div>
 </div>

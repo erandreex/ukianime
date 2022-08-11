@@ -1,7 +1,17 @@
-@import url(../../../../assets/css/form2.css);
+@import url(../../../../assets/css/formularios.css);
 
-.input {
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type = text].input {
     font-size: 25px;
+    width: 95%;
+    margin: 0 auto;
+    align-self: center;
+    text-align: center;
 }
 
 

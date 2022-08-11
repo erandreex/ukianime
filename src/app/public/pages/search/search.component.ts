@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { Data } from 'src/app/shared/interfaces/anime.interface';
@@ -14,17 +14,23 @@ export class SearchComponent implements OnInit {
 
     public mostrar: boolean = false;
 
+    public focus: boolean = false;
+
     public termino: string = '';
 
     searchForm: FormGroup = this.fb.group({
         text: ['', [Validators.required]],
     });
 
+    @ViewChild('input') input!: ElementRef<HTMLInputElement>;
+
     constructor(private fb: FormBuilder, private animesService: AnimesService) {}
     ngOnInit(): void {
+        this.focus = true;
+
         this.searchForm
             .get('text')
-            ?.valueChanges.pipe(debounceTime(500))
+            ?.valueChanges.pipe(debounceTime(300))
             .subscribe((value) => {
                 this.termino = value;
                 this.buscar();
@@ -49,5 +55,9 @@ export class SearchComponent implements OnInit {
             this.animes = value;
             this.mostrar = false;
         });
+    }
+
+    ngAfterViewInit(): void {
+        this.input.nativeElement.focus();
     }
 }

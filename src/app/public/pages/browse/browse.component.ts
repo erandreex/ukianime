@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Data, Error } from 'src/app/shared/interfaces/anime.interface';
 import { AnimesService } from 'src/app/shared/services/animes.service';
-import { take } from 'rxjs';
+import { take, tap } from 'rxjs';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
     selector: 'app-browse',
@@ -30,12 +31,12 @@ export class BrowseComponent implements OnInit {
     public drama: Data[] | any = [];
     public error7: boolean = false;
 
-    constructor(private animesService: AnimesService) {}
+    constructor(private animesService: AnimesService, private authService: AuthService) {}
 
     ngOnInit(): void {
         this.trending();
-        // this.categories();
-        // this.genres();
+        this.categories();
+        this.genres();
     }
 
     trending() {

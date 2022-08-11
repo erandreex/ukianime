@@ -12,11 +12,11 @@ import { SplitPipe } from './pipes/split.pipe';
 import { IndexComponent } from './index/index/index.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { AuthIndexComponent } from './index/auth-index/auth-index.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { ToolsCardComponent } from './components/tools-card/tools-card.component';
 import { CheckImageDirective } from './directives/check-image.directive';
 import { AnimeCardComponent } from './components/anime-card/anime-card.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
     declarations: [
@@ -30,11 +30,11 @@ import { AnimeCardComponent } from './components/anime-card/anime-card.component
         IndexComponent,
         CarrouselComponent,
         AuthIndexComponent,
-        PaginationComponent,
         ProfileCardComponent,
         ToolsCardComponent,
         CheckImageDirective,
         AnimeCardComponent,
+        BreadcrumbsComponent,
     ],
     imports: [CommonModule, RouterModule],
     exports: [
@@ -44,9 +44,8 @@ import { AnimeCardComponent } from './components/anime-card/anime-card.component
         SidenavComponent,
         BottomNavComponent,
         ModalCustomizesComponent,
-
+        BreadcrumbsComponent,
         CarrouselComponent,
-        PaginationComponent,
         ProfileCardComponent,
         ToolsCardComponent,
         AnimeCardComponent,

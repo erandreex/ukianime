@@ -1,9 +1,22 @@
-<h2>Mis Favoritos</h2>
-<hr />
-<ul class="favoritos-layout">
-    <li *ngFor="let anime of animes">
-        <app-anime-card [anime_id]="anime"></app-anime-card>
-    </li>
-</ul>
+<div class="organizar">
+    <h2>Mis Favoritos</h2>
+    <hr />
+    <ul class="favoritos-layout" *ngIf="!load">
+        <li *ngFor="let anime of animes">
+            <app-anime-card [anime_id]="anime"></app-anime-card>
+        </li>
+    </ul>
 
-<app-pagination></app-pagination>
+    <div *ngIf="!load && animes.length == 0">
+        <h2>No tiene aún favoritos!</h2>
+    </div>
+
+    <div *ngIf="load" class="paracargar">
+        <div class="loader"></div>
+    </div>
+
+    <div class="pagination">
+        <button [disabled]="!hasPreviousPage" (click)="mover('reg')">Regresar</button>
+        <button [disabled]="!hasNextPage" (click)="mover('sig')">Siguiente</button>
+    </div>
+</div>

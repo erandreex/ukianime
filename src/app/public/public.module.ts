@@ -11,9 +11,10 @@ import { BrowseComponent } from './pages/browse/browse.component';
 import { DescriptionComponent } from './pages/description/description.component';
 import { SearchComponent } from './pages/search/search.component';
 import { ToolsComponent } from './pages/tools/tools.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 @NgModule({
-    declarations: [NosotrosComponent, BrowseComponent, DescriptionComponent, SearchComponent, ToolsComponent],
+    declarations: [NosotrosComponent, BrowseComponent, DescriptionComponent, SearchComponent, ToolsComponent, LandingComponent],
     imports: [CommonModule, PublicRoutingModule, ReactiveFormsModule, SharedModule],
 })
 export class PublicModule {}

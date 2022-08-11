@@ -1,22 +1,11 @@
-/* Fuentes */
-
-@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
-
 @import url('../../../../assets/css/logo.css');
 
+@import url('../../../../assets/css/form2.css');
 
-/* Reser */
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
 
 a {
-    text-decoration: none;
+    color: var(--text-color);
 }
-
-/* Navegador principal */
 
 .espacio {
     height: 70px;
@@ -104,6 +93,24 @@ section {
 
 #loginActions {
     display: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+button {
+    border-radius: 5px;
+    margin: 0;
+    height: 40px;
+}
+
+#loginActions button:first-child {
+    background-color: transparent;
+    border: 2px solid var(--first-color);
+}
+
+li {
+    cursor: pointer;
 }
 
 @media screen and (min-width: 650px) {
@@ -121,7 +128,7 @@ section {
     }
 
     #loginActions {
-        display: block;
+        display: flex;
     }
 
     #logoMobile {

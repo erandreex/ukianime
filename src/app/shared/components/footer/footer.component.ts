@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
     selector: 'app-footer',
@@ -8,5 +9,10 @@ import { Component, Input } from '@angular/core';
 export class FooterComponent {
     @Input('auth') public auth: boolean = false;
 
-    constructor() {}
+    constructor(private authService: AuthService) {}
+
+    get fecha() {
+        const hoy = new Date();
+        return hoy.toLocaleDateString();
+    }
 }

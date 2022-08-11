@@ -1,7 +1,7 @@
 <section *ngIf="auth && rutasAuth.length > 0" id="bottomNav">
     <ul class="navbar">
         <li *ngFor="let ruta of rutasAuth">
-            <a routerLink="/{{ ruta.path }}" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+            <a routerLink="/{{ ruta.path }}" [routerLinkActive]="'active'">
                 <i class="{{ ruta.icon }}"></i>
             </a>
         </li>

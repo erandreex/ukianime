@@ -15,28 +15,30 @@ import { delay } from 'rxjs';
 })
 export class LoginComponent {
     public load: boolean = false;
+    public errors: string[] = [];
 
     loginForm: FormGroup = this.fb.group({
-        username: ['test1', [Validators.required, Validators.minLength(3)]],
-        password: ['123456', [Validators.required, Validators.minLength(6)]],
+        username: ['test1', [Validators.required, Validators.minLength(1)]],
+        password: ['123456', [Validators.required, Validators.minLength(1)]],
     });
 
     constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {}
 
     login() {
         this.load = true;
+        this.errors = [];
 
         const { username, password } = this.loginForm.value;
 
         this.authService
             .login(username, password)
             .pipe(delay(500))
-            .subscribe((ok) => {
-                if (ok === true) {
+            .subscribe((resp) => {
+                if (resp === true) {
                     this.router.navigateByUrl('/browse');
                 } else {
                     this.load = false;
-                    console.log(ok);
+                    this.errors = resp.errors;
                 }
             });
     }

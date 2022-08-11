@@ -5,7 +5,7 @@
     z-index: 2;
     top: 0;
     right: 0;
-    background-color: #111;
+    background-color: var(--second-background);
     overflow-x: auto; /* Disable horizontal scroll */
     padding-top: 60px;
     transition: all 0.5s ease;
@@ -24,10 +24,16 @@
   /* Position and style the close button (top right corner) */
   .sidenav .closebtn {
     position: absolute;
-    top: 0;
+    top: 25px;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+
+  .closebtn:hover {
+    color: var(--submain-color);
   }
 
   /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -54,3 +60,16 @@
   .mostrarBG {
     display: block;
   }
+
+
+@media screen and (min-width: 650px) {
+
+    .links {
+        display: none;
+    }
+
+    hr {
+        display: none;
+    }
+
+}

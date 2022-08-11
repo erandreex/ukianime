@@ -1,0 +1,10 @@
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+a,span  {
+    color: var(--text-color);
+    font-size: var(--category-size);
+}

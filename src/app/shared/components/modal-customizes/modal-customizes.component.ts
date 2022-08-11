@@ -22,13 +22,9 @@ export class ModalCustomizesComponent {
 
     public allStyles: stylesAllowedOptions | null = null;
 
-    constructor(private stylesService: StylesService, private sharedService: SharedService) {
+    constructor(private stylesService: StylesService) {
         this.allStyles = this.stylesService.allowedStyles;
         this.optionsSelected = this.stylesService.styleLogic;
-
-        this.subscription = this.sharedService.modalAction$.subscribe((value) => {
-            this.modal(value);
-        });
     }
 
     modal(value: string) {

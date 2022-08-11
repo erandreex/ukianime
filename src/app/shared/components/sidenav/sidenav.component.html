@@ -1,6 +1,9 @@
 <div id="mySidenav" class="sidenav" [style.width]="sizeOpen">
-    <ul>
-        <li class="closebtn" (click)="action('cerrar')">&times;</li>
+    <i class="closebtn fa-solid fa-xmark" (click)="action('cerrar')"></i>
+    <ul class="links">
+        <li><a routerLink="/login">Ingresar</a></li>
+        <li><a routerLink="/registro">Registro</a></li>
+        <hr />
         <li *ngFor="let ruta of rutas">
             <a routerLink="/{{ ruta.path }}">{{ ruta.name }}</a>
         </li>

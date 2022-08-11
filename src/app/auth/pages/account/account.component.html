@@ -1,17 +1,26 @@
-<main>
-    <h2>Ajuste de cuenta</h2>
-    <hr />
-    <section class="account-layout">
-        <ul class="opciones">
-            <li><a routerLink="perfil">Perfil</a></li>
-            <li><a routerLink="cambiar-pass">Cambiar Contraseña</a></li>
-            <li><a routerLink="preguntas">Actualizar Preguntas</a></li>
-            <li><a routerLink="desactivar">Desactivar cuenta</a></li>
-            <li><a routerLink="eliminar">Eliminar cuenta</a></li>
-        </ul>
+<section class="account-layout">
+    <div class="body-select">
+        <app-breadcrumbs></app-breadcrumbs>
+        <div class="user-card" *ngIf="screenWidth >= maxWidthOption || opciones">
+            <img src="../../../../assets/user.webp" alt="" />
+            <h2>{{ user.firstname }} {{ user.lastname }}</h2>
+        </div>
 
-        <div class="body-options">
+        <ul class="opciones" *ngIf="screenWidth >= maxWidthOption || opciones">
+            <li routerLink="perfil" routerLinkActive="active"><a routerLink="perfil">Perfil</a></li>
+            <li routerLink="cambiar-pass" routerLinkActive="active">
+                <a routerLink="cambiar-pass">Cambiar Contraseña</a>
+            </li>
+            <li routerLink="preguntas" routerLinkActive="active"><a routerLink="preguntas">Actualizar Preguntas</a></li>
+            <li routerLink="desactivar" routerLinkActive="active"><a routerLink="desactivar">Desactivar cuenta</a></li>
+        </ul>
+        <br />
+        <button *ngIf="screenWidth >= maxWidthOption || opciones" (click)="logout()">Cerrar sesión</button>
+    </div>
+
+    <div class="body-options">
+        <div class="pruebaa">
             <router-outlet></router-outlet>
         </div>
-    </section>
-</main>
+    </div>
+</section>

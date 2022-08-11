@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+
+
 .logo {
     display: flex;
     flex-direction: row;
@@ -7,7 +10,7 @@
 
 .titulo {
     font-family: 'Shojumaru', cursive;
-    text-shadow: 4px 4px #222020;
+    text-shadow: 2px 2px #222020;
     font-size: 2rem;
     letter-spacing: 0.01em;
     color: var(--first-color);
@@ -22,6 +25,8 @@
 
     .titulo {
         font-size: 2rem;
+        text-shadow: 2px 2px #222020;
+
     }
 
     .logo-img {

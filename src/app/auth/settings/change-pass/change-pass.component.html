@@ -1,4 +1,5 @@
 <form class="form-layout" autocomplete="off" [formGroup]="passwordForm" (ngSubmit)="changePass()">
+    <h2>Cambiar contraseña</h2>
     <section class="imputs-layout">
         <div class="group">
             <input type="password" formControlName="oldPassword" class="input" required="" />
@@ -7,17 +8,24 @@
         </div>
 
         <div class="group">
-            <input type="password" formControlName="newPassword1" class="input" required="" />
+            <input type="password" formControlName="password" class="input" required="" />
             <span class="bar"></span>
             <label>Nueva contraseña</label>
         </div>
-
-        <div class="group">
-            <input type="password" formControlName="newPassword2" class="input" required="" />
-            <span class="bar"></span>
-            <label>Repita la contraseña</label>
-        </div>
     </section>
 
-    <button type="submit">Actualizar</button>
+    <button type="submit" [disabled]="passwordForm.invalid">
+        <div *ngIf="load" class="loader"></div>
+        <span *ngIf="!load">Actualizar</span>
+    </button>
 </form>
+
+<section class="errors" *ngIf="errors.length !== 0">
+    <ul>
+        <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+</section>
+
+<section class="exito" *ngIf="exito">
+    <p>Contraseña actualizada con exito!</p>
+</section>

@@ -11,9 +11,10 @@ import { debounceTime, interval, delay } from 'rxjs';
 })
 export class Rest1Component implements OnInit {
     public load: boolean = false;
+    public errors: string[] = [];
 
     rest1Form: FormGroup = this.fb.group({
-        username: ['', [Validators.required]],
+        username: ['', Validators.required, Validators.minLength(1)],
     });
 
     constructor(
@@ -30,15 +31,17 @@ export class Rest1Component implements OnInit {
 
     submit() {
         const { username } = this.rest1Form.value;
+        this.errors = [];
         this.load = true;
         this.restService
             .username(username)
             .pipe(delay(1000))
-            .subscribe((ok) => {
-                if (ok === true) {
+            .subscribe((resp) => {
+                if (resp === true) {
                     this.router.navigate([username], { relativeTo: this.activatedRoute });
                 } else {
                     this.load = false;
+                    this.errors = resp.errors;
                 }
             });
     }

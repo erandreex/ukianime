@@ -10,7 +10,7 @@
     overflow: hidden;
     border: transparent;
     position: relative;
-    color: var(--text-color);
+    color: var(--anime-card-text);
 }
 
 .card >  img,

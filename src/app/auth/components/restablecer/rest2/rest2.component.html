@@ -8,3 +8,9 @@
     </button>
     <a class="registrarse" routerLink="/login">Salir</a>
 </form>
+
+<section class="errors" *ngIf="errors.length !== 0">
+    <ul>
+        <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+</section>
